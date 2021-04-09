@@ -1,0 +1,29 @@
+<head>
+  <title>serviceApp</title>
+</head>
+
+<body>
+  {{> home}}
+</body>
+  
+<template name="home">
+<header>
+  <h1>Liste des films</h1>
+</header>
+
+  {{#each movies}}
+  <div class="film">
+    <h3>{{title}}</h3>
+    <div class="img">
+    <img src="https://www.themoviedb.org/t/p/w440_and_h660_face{{poster_path}}">
+    </div>
+    <li>{{overview}}</li>
+    <div id="like" class="like">
+      <button type="submit" data-id="{{id}}">Like</button>
+      <p>Like: {{like}}</p>
+    </div>
+  </div>
+  {{/each}}
+ 
+</template>
+ 
